@@ -1,0 +1,24 @@
+Package: CorrDrugTumorMSI
+Type: Package
+Title: A pipeline to combine drug distribution with tumor tissue-types in mass spectrometry imaging (MSI) data 
+Version: 0.1.0
+Author: Mridula Prasad <mridula122@gmail.com>
+Maintainer: Mridula Prasad <mridula122@gmail.com>
+Description: A package to correlate observed drug distribution profile with tumor tissue-types in untargeted MSI data. 
+             This package provides main functions to perform the pre-processing and clustering of MSI data, create LISA map,
+             quantitate analysis of clustered and LISA image, and the variables selection using spatial methods.  
+License: GPL-3
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 7.1.0
+Imports: 
+    msProcess (>= 1.0.8),
+    MALDIquantForeign,
+    splus2R,
+    data.table,
+    amap,
+    fpc,
+    ifultools,
+    spdep
+Remotes: 
+    zeehio/msProcess
