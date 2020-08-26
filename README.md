@@ -12,6 +12,11 @@ You are welcome to:
 
 ## Installation
 
+```r
 install.packages("devtools")
 library("devtools")
 install_github("mridulaprasad/CorrDrugTumorMSI")
+
+```
+
+## Examples
