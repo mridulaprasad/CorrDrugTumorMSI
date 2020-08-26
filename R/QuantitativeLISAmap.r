@@ -24,9 +24,11 @@ ClusteredLISAimgQA <- function( ClusteredImg,LISAmap,plot='T')
   id1 <- which(img1 %in% 3); QAmatrix[3,] <- as.vector(table(img2[id1]))
   id1 <- which(img1 %in% 4); QAmatrix[4,] <- as.vector(table(img2[id1]))
   QAmatrix <- QAmatrix/tissuePixeids
+  
   if(plot== 'T'){
     par(mfrow=c(2,2))
-    apply(QAmatrix,1,function(x)barplot(x,ylim = c(0,max(QAmatrix)),main = LISAzones[i]))
+    for(i in 1:4){
+    barplot(as.matrix(QAmatrix[i,]),ylim = c(0,max(QAmatrix)),main = LISAzones[i])}
   }
   
   return(QAmatrix)

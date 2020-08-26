@@ -37,7 +37,7 @@ optimalClust <- function(Inputdata)
 #'
 
 
-BisectKmeansClustering <- function(Inputdata,cluster.size=0.4)
+BisectKmeansClustering <- function(Inputdata,cluster.size=0.5)
 {
 mainCluster <-c();count <-1; structClusternames <- rep(0,dim(Inputdata)[1])
 for(m in 1:10)

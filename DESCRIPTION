@@ -11,7 +11,7 @@ License: GPL-3
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 7.1.0
-Imports: 
+Imports:
     msProcess (>= 1.0.8),
     MALDIquantForeign,
     splus2R,
@@ -20,5 +20,8 @@ Imports:
     fpc,
     ifultools,
     spdep
-Remotes: 
+Remotes:
     zeehio/msProcess
+Suggests: knitr,
+    rmarkdown
+VignetteBuilder: knitr

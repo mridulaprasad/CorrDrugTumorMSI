@@ -25,7 +25,7 @@
 #'xcord               <- PreprocessedMSIData[[1]][[2]]; 
 #'SingleionImage      <- IonInensityMatrix[,41]
 #'dim(SingleionImage) <- c(ycord,xcord)
-#'image(SingleionImage)
+#'image(SingleionImage,axes=FALSE,col=rainbow(256))
 #'
 
 PreprocessingMSIData <- function(folderpath,removePeaks=0.2,edgecorrection=T)

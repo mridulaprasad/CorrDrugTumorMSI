@@ -40,7 +40,7 @@ CreateLISAmap <- function(Ionimage,distthrs=5,plot='T',mask=NULL)
   LISAmap   <- scale(Ionimage)
   LISAmap[LISAmap >=0 & wzx >=0 ] <- 1; LISAmap[LISAmap >=0 & wzx <=0 ] <- 3; LISAmap[LISAmap <=0 & wzx >=0 ] <- 4; LISAmap[LISAmap <=0 & wzx <=0 ] <- 2
   dim(LISAmap) <- c(ycord,xcord)
-  if(plot== 'T')image(LISAmap,axes=FALSE,col=c('black','blue','green','yellow','red'))
+  if(plot== 'T')image(LISAmap,axes=FALSE,col=c('blue','red','green','yellow'))
   return(LISAmap)
 }
   }

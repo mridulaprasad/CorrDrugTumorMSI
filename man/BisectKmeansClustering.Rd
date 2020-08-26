@@ -4,7 +4,7 @@
 \alias{BisectKmeansClustering}
 \title{Bisect k-means clustering of the data}
 \usage{
-BisectKmeansClustering(Inputdata, cluster.size = 0.4)
+BisectKmeansClustering(Inputdata, cluster.size = 0.5)
 }
 \arguments{
 \item{cluster.size}{The fraction of pixels in individual cluster. Particular cluster will not split further if 
