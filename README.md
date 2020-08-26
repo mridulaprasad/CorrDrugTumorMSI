@@ -6,9 +6,11 @@ CorreDrugTumorMSI provides a complete analysis pipeline to analyze untargeted dr
 
 ## Contact
 You are welcome to:
-•	submit suggestions and bug-reports at: https://github.com/mridulaprasad/CorrDrugTumorMSI/issues
-•	send a pull request on: https://github.com/mridulaprasad/CorrDrugTumorMSI/
-•	compose an e-mail to: mridula122@gmail.com 
+
+
+*	submit suggestions and bug-reports at: https://github.com/mridulaprasad/CorrDrugTumorMSI/issues
+*	send a pull request on: https://github.com/mridulaprasad/CorrDrugTumorMSI/
+*	compose an e-mail to: mridula122@gmail.com 
 
 ## Installation
 
