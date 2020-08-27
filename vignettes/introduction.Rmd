@@ -11,8 +11,6 @@ vignette: >
 
 The **CorrDrugTumorMSI** package contains different functions to analyze untargeted drug Mass Spectrometry Imaging data. The main objective of package is to provide methods to link observed drug distribution with unsupervised clusters identified. 
 
-```{r}
-library(CorrDrugTumorMSI)
 
 ## Preprocessing of MSI data
 
@@ -25,13 +23,14 @@ ycord               <- mat[[1]][[3]];
 ## x-coordinate of MSI data
 xcord               <- mat[[1]][[2]]
 
-```
+
 
 ## Create Spatial correlogram of spatial data 
 
 ## load synthetic spatial data
 
 ```{r}
+library(CorrDrugTumorMSI)
 data('spdata')
 
 xycoord  <- as.matrix(expand.grid(1:80,1:10))
