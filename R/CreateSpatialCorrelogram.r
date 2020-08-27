@@ -10,7 +10,7 @@
 #'
 #'
 
-SpatialCorrelogram <- function(w,x,distr=2,Fig=T){
+CreateSpatialCorrelogram <- function(w,x,distr=2,Fig='T'){
   w <- as.matrix(dist(w))
   aa <- ceiling(max(w)/distr)
   dists <- seq(0,aa*distr,distr)
@@ -29,6 +29,6 @@ SpatialCorrelogram <- function(w,x,distr=2,Fig=T){
     cors <- c(cors,cor(x,lag))
     cors[is.na(cors)]<-0
   }
- if(Fig=='T') plot(dists[c(1:30)],cors,type='o',xlab='lagdist',ylab='Autocorrelation value')
+ if(Fig=='T') plot(dists[c(1:30)],cors,type='o',xlab='lagdist',ylab='Autocorrelation value'); abline(h=0,col='red')
   return(cbind(dists[1:30],cors))
 } 

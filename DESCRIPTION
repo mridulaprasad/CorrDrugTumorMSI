@@ -25,3 +25,4 @@ Remotes:
 Suggests: knitr,
     rmarkdown
 VignetteBuilder: knitr
+
