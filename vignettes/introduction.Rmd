@@ -48,7 +48,9 @@ clusteredImg <- BisectKmeansClustering(spdata,cluster.size = 0.5)
 ## Create LISA map
 
 ```{r}
-LISAmap <- CreateLISAmap(spdata[,1],distthrs = 3)
+ionImg <- spdata[,1]
+dim(ionImg) <- c(80,10)
+LISAmap <- CreateLISAmap(ionImg,distthrs = 3)
 
 ```
 
