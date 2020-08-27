@@ -42,6 +42,8 @@ spcor <- CreateSpatialCorrelogram(xycoord,spdata[,1])
 
 ```{r}
 clusteredImg <- BisectKmeansClustering(spdata,cluster.size = 0.5)
+dim(clusteredImg) <- c(80,10)
+image(clusteredImg,axes=FALSE)
 
 ```
 
