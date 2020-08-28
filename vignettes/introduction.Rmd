@@ -25,31 +25,36 @@ xcord               <- mat[[1]][[2]]
 
 
 
-## Create Spatial correlogram of spatial data 
 
-## load synthetic spatial data
 
-```{r}
-library(CorrDrugTumorMSI)
-data('spdata')
-
-xycoord  <- as.matrix(expand.grid(1:80,1:10))
-spcor <- CreateSpatialCorrelogram(xycoord,spdata[,1])
-
-```
 
 ## Do clustering of input data matrix
 
 ```{r}
+library(CorrDrugTumorMSI)
+data('spdata')
+par(mar=c(1, 1, 1, 1))
+
 clusteredImg <- BisectKmeansClustering(spdata,cluster.size = 0.5)
 dim(clusteredImg) <- c(80,10)
 image(clusteredImg,axes=FALSE)
 
 ```
 
+## Create Spatial correlogram of spatial data 
+
+```{r}
+
+xycoord  <- as.matrix(expand.grid(1:80,1:10))
+spcor <- CreateSpatialCorrelogram(xycoord,spdata[,1])
+
+```
+
+
 ## Create LISA map
 
 ```{r}
+par(mar=c(1, 1, 1, 1))
 ionImg <- spdata[,1]
 dim(ionImg) <- c(80,10)
 LISAmap <- CreateLISAmap(ionImg,distthrs = 3)
@@ -59,6 +64,7 @@ LISAmap <- CreateLISAmap(ionImg,distthrs = 3)
 ## Quantitative analysis of LISA map 
 
 ```{r}
+par(mar=c(1, 1, 1, 1))
 Qlisa <- ClusteredLISAimgQA(clusteredImg,LISAmap)
 
 ```
