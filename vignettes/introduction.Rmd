@@ -14,8 +14,8 @@ The **CorrDrugTumorMSI** package contains different functions to analyze untarge
 
 ## Preprocessing of MSI data
 
-folderpath <- 'path of folder contains MSI data'
-mat <- PreprocessingMSIData('folderpath')
+folderpath <- 'path of folder contains MSI data'\n
+mat <- PreprocessingMSIData('folderpath')\n
 ## Ion intensity matrix
 IonInensityMatrix   <- mat[[1]][[1]] ;
 ## y-coordinate of MSI data
@@ -25,10 +25,7 @@ xcord               <- mat[[1]][[2]]
 
 
 
-
-
-
-## Do clustering of input data matrix
+## Clustering of input data matrix
 
 ```{r}
 library(CorrDrugTumorMSI)
@@ -41,7 +38,7 @@ image(clusteredImg,axes=FALSE)
 
 ```
 
-## Create Spatial correlogram of spatial data 
+## Creates a spatial correlogram of spatial data 
 
 ```{r}
 
@@ -51,7 +48,7 @@ spcor <- CreateSpatialCorrelogram(xycoord,spdata[,1])
 ```
 
 
-## Create LISA map
+## Creates a LISA map
 
 ```{r}
 par(mar=c(1, 1, 1, 1))
