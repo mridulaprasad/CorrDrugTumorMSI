@@ -14,8 +14,8 @@ The **CorrDrugTumorMSI** package contains different functions to analyze untarge
 
 ## Preprocessing of MSI data
 
-folderpath <- 'path of folder contains MSI data'\n
-mat <- PreprocessingMSIData('folderpath')\n
+cat(folderpath <- 'path of folder contains MSI data'\n)
+cat(mat <- PreprocessingMSIData('folderpath')\n)
 ## Ion intensity matrix
 IonInensityMatrix   <- mat[[1]][[1]] ;
 ## y-coordinate of MSI data
