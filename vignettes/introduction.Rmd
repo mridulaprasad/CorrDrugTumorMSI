@@ -14,12 +14,17 @@ The **CorrDrugTumorMSI** package contains different functions to analyze untarge
 
 ## Preprocessing of MSI data
 
+#PreprocessingMSIData
+
+Function does preprocessing of MSI data available in analyze 7.5 format. The function first creates adaptive bins based on the peaks size in maximum intensity reference spectrum from given MSI data. Inside
+created bins, peaks selection performed using local maxima search approach. Apart from peaks selection, there is an option to exclude high intensity peaks from the edge of the tissue and/or remove peaks with small coverage area. 
+
 folderpath <- 'path of folder contains MSI data'\
-mat <- PreprocessingMSIData('folderpath')\
+mat       <- PreprocessingMSIData('folderpath')\
 
 
 IonInensityMatrix   <- mat[[1]][[1]]  ## Ion intensity matrix  \
-ycord               <- mat[[1]][[3]]  ## y-coordinate of MSI data \  
+ycord               <- mat[[1]][[3]]  ## y-coordinate of MSI data \   
 xcord               <- mat[[1]][[2]]  ## x-coordinate of MSI data \
 
 
@@ -38,6 +43,7 @@ image(clusteredImg,axes=FALSE)
 ```
 
 ## Creates a spatial correlogram of spatial data 
+
 
 ```{r}
 
