@@ -6,21 +6,21 @@ CorreDrugTumorMSI provides a complete analysis pipeline to analyze untargeted dr
 
 ## Installation
 
-Install HomogenMSI: In the shell type
+* Install HomogenMSI: In the shell type
 
 ```r
 library(devtools)
 install_github("pietrofranceschi/HomogenMSI", dependencies = TRUE) 
 ```
 
-To additionally build the vignette the previous command should include build_vignettes = TRUE
+* To additionally build the vignette the previous command should include build_vignettes = TRUE
 
 ```r
 library(devtools)
 install_github("pietrofranceschi/HomogenMSI", dependencies = TRUE, build_vignettes = TRUE) 
 
 ```
-Load the package: In shell type
+* Load the package: In shell type
 ```r
 library(HomogenMSI)
 ```
