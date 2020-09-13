@@ -80,13 +80,14 @@ With spatial methods (SL, SE) the xycoord of the data also required as an input.
 par(mar=c(1, 1, 1, 1))
 xycoord  <- as.matrix(expand.grid(1:41,1:40))  # Create spatial co-ordinates of the data
 cl <- clusteredImg   # cluster label
-varselect <- VariablesSelection(spdata,cl,method = 'SL',xycoord = xycoord,lagdist = 1) # variables selection using spatial lag method
 
-SelectedVariables <- which(p.adjust(varselect[[2]],"holm")<0.05) # The index of selected variabels after p-value adjustment
+#varselect <- VariablesSelection(spdata,cl,method = 'SL',xycoord = xycoord,lagdist = 1) # variables selection using spatial lag method
+
+#SelectedVariables <- which(p.adjust(varselect[[2]],"holm")<0.05) # The index of selected variabels after p-value adjustment
 
 # Plot selected variables on mean spectrum 
-plot(c(1:100),apply(spdata[c(1:820),],2,sum),type='h',xlab="variables",ylab="",ylim=c(0,2000))
- lines(c(1:100),apply(spdata[c(821:1620),],2,sum),type='h',xlab="variables",ylab="",ylim=c(0,2000),col='blue')
-points( which(p.adjust(varselect[[2]],"holm")<0.05),rep(2200,22),col='red',pch=16)
+#plot(c(1:100),apply(spdata[c(1:820),],2,sum),type='h',xlab="variables",ylab="",ylim=c(0,2000))
+#lines(c(1:100),apply(spdata[c(821:1620),],2,sum),type='h',xlab="variables",ylab="",ylim=c(0,2000),col='blue')
+#points( which(p.adjust(varselect[[2]],"holm")<0.05),rep(2200,22),col='red',pch=16)
 
 ```
