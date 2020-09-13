@@ -32,7 +32,7 @@ if(method=='SE'){
   neighbor <- matrix(0,nrow=max(xycoord[,1]),ncol=max(xycoord[,2])); 
   nlistk1  <- spdep::dnearneigh(xycoord,0,lagdist);xy_weights <- spdep::nb2listw(nlistk1);
   for(i in 1:dim(Inputdata)[2]){
-  results      <- spdep::errorsarlm(Inputdata[,i] ~ as.factor(classids),listw = xy_weights)
+  results      <- spatialreg::errorsarlm(Inputdata[,i] ~ as.factor(classids),listw = xy_weights)
   mt           <- summary(results); 
   SpMod_estm[i]<-  mt$Coef[2];
   SpMod_pval[i] <- mt$Coef[8];  
@@ -47,7 +47,7 @@ metlist <-list(SpMod_estm,SpMod_pval)}
     
    for(i in 1:dim(Inputdata)[2]){
    
-  results    <- spdep::lagsarlm(Inputdata[,i] ~ as.factor(classids),listw = xy_weights)
+  results    <- spatialreg::lagsarlm(Inputdata[,i] ~ as.factor(classids),listw = xy_weights)
   mt         <- summary(results); 
   SpMod_estm[i] <-  mt$Coef[2];
   SpMod_pval[i] <- mt$Coef[8];   

@@ -19,7 +19,8 @@ Imports:
     amap,
     fpc,
     ifultools,
-    spdep
+    spdep,
+    spatialreg
 Remotes:
     zeehio/msProcess
 Suggests: knitr,

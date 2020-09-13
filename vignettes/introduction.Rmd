@@ -37,7 +37,7 @@ data('spdata')
 par(mar=c(1, 1, 1, 1))
 
 clusteredImg <- BisectKmeansClustering(spdata,cluster.size = 0.5)
-dim(clusteredImg) <- c(80,10)
+dim(clusteredImg) <- c(41,40)
 image(clusteredImg,axes=FALSE)
 
 ```
@@ -47,7 +47,7 @@ image(clusteredImg,axes=FALSE)
 
 ```{r}
 
-xycoord  <- as.matrix(expand.grid(1:80,1:10))
+xycoord  <- as.matrix(expand.grid(1:41,1:40))
 spcor <- CreateSpatialCorrelogram(xycoord,spdata[,1])
 
 ```
@@ -58,7 +58,7 @@ spcor <- CreateSpatialCorrelogram(xycoord,spdata[,1])
 ```{r}
 par(mar=c(1, 1, 1, 1))
 ionImg <- spdata[,1]
-dim(ionImg) <- c(80,10)
+dim(ionImg) <- c(41,40)
 LISAmap <- CreateLISAmap(ionImg,distthrs = 3)
 
 ```
@@ -71,4 +71,22 @@ Qlisa <- ClusteredLISAimgQA(clusteredImg,LISAmap)
 
 ```
 
+## Variables selection 
 
+The function variablesSelection selects important variables from identified clusters. 
+With spatial methods (SL, SE) the xycoord of the data also required as an input.  
+
+```{r}
+par(mar=c(1, 1, 1, 1))
+xycoord  <- as.matrix(expand.grid(1:41,1:40))  # Create spatial co-ordinates of the data
+cl <- clusteredImg   # cluster label
+varselect <- VariablesSelection(spdata,cl,method = 'SL',xycoord = xycoord,lagdist = 1) # variables selection using spatial lag method
+
+SelectedVariables <- which(p.adjust(varselect[[2]],"holm")<0.05) # The index of selected variabels after p-value adjustment
+
+# Plot selected variables on mean spectrum 
+plot(c(1:100),apply(spdata[c(1:820),],2,sum),type='h',xlab="variables",ylab="",ylim=c(0,2000))
+ lines(c(1:100),apply(spdata[c(821:1620),],2,sum),type='h',xlab="variables",ylab="",ylim=c(0,2000),col='blue')
+points( which(p.adjust(varselect[[2]],"holm")<0.05),rep(2200,22),col='red',pch=16)
+
+```
